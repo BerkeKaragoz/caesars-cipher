@@ -21,15 +21,15 @@ describe("Base64", function () {
       var shiftAmount = 0;
 
       assert.equal(
-        _.caesarsCipher(shortText, shiftAmount),
-        _.caesarsCipher(shortText, shiftAmount),
+        _.base64CaesarsCipher(shortText, shiftAmount),
+        _.base64CaesarsCipher(shortText, shiftAmount),
       );
     });
 
     it("should shift by zero", function () {
       var shiftAmount = 0;
       assert.equal(
-        _.caesarsCipher(shortText, shiftAmount),
+        _.base64CaesarsCipher(shortText, shiftAmount),
         toBase64(shortText),
       );
     });
@@ -37,14 +37,14 @@ describe("Base64", function () {
     it("should shift by one", function () {
       var shiftAmount = 1;
 
-      assert.equal(_.caesarsCipher(shortText, shiftAmount), "R3mxbHWz");
+      assert.equal(_.base64CaesarsCipher(shortText, shiftAmount), "R3mxbHWz");
     });
 
     it("should be able to shift more than the upper boundary", function () {
       var shiftAmount = MAX_LEGAL_RANGE;
 
       assert.equal(
-        _.caesarsCipher(shortText, shiftAmount),
+        _.base64CaesarsCipher(shortText, shiftAmount),
         toBase64(shortText),
       );
     });
@@ -52,7 +52,10 @@ describe("Base64", function () {
     it("should be able to shift long texts", function () {
       var shiftAmount = MAX_LEGAL_RANGE;
 
-      assert.equal(_.caesarsCipher(longText, shiftAmount), toBase64(longText));
+      assert.equal(
+        _.base64CaesarsCipher(longText, shiftAmount),
+        toBase64(longText),
+      );
     });
   });
 
@@ -62,8 +65,8 @@ describe("Base64", function () {
       var cipheredText = shortText;
 
       assert.equal(
-        _.caesarsDecipher(cipheredText, shiftAmount),
-        _.caesarsDecipher(cipheredText, shiftAmount),
+        _.base64CaesarsDecipher(cipheredText, shiftAmount),
+        _.base64CaesarsDecipher(cipheredText, shiftAmount),
       );
     });
 
@@ -71,28 +74,40 @@ describe("Base64", function () {
       var shiftAmount = 0;
       var cipheredText = toBase64(shortText);
 
-      assert.equal(_.caesarsDecipher(cipheredText, shiftAmount), shortText);
+      assert.equal(
+        _.base64CaesarsDecipher(cipheredText, shiftAmount),
+        shortText,
+      );
     });
 
     it("should decipher shift by one", function () {
       var shiftAmount = 1;
       var cipheredText = "R3mxbHWz"; // ciphered shortText by one
 
-      assert.equal(_.caesarsDecipher(cipheredText, shiftAmount), shortText);
+      assert.equal(
+        _.base64CaesarsDecipher(cipheredText, shiftAmount),
+        shortText,
+      );
     });
 
     it("should be able to decipher shifted more than the upper boundary", function () {
       var shiftAmount = MAX_LEGAL_RANGE;
       var cipheredText = toBase64(shortText);
 
-      assert.equal(_.caesarsDecipher(cipheredText, shiftAmount), shortText);
+      assert.equal(
+        _.base64CaesarsDecipher(cipheredText, shiftAmount),
+        shortText,
+      );
     });
 
     it("should be able to shift long texts", function () {
       var shiftAmount = MAX_LEGAL_RANGE;
       var cipheredText = toBase64(longText);
 
-      assert.equal(_.caesarsDecipher(cipheredText, shiftAmount), longText);
+      assert.equal(
+        _.base64CaesarsDecipher(cipheredText, shiftAmount),
+        longText,
+      );
     });
   });
 });
