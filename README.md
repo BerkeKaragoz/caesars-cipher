@@ -14,12 +14,19 @@ You can try it out at the widget at [berkekaragoz.com](https://berkekaragoz.com)
 ## Usage
 
 ```ts
-import { caesarsCipher, caesarsDecipher } from "caesars-cipher/base64";
-// OR
 import { caesarsCipher, caesarsDecipher } from "caesars-cipher/uri-encoded";
+import {
+  base64caesarsCipher,
+  base64caesarsDecipher,
+} from "caesars-cipher/base64";
 
+// uri-encoded
 caesarsCipher("Cipher", 10); // Mszro|
 caesarsDecipher("Mszro|", 10); // Cipher
+
+// base64
+base64caesarsCipher("Cipher", 10); // [<v☺kQ`♥
+base64caesarsDecipher("[<v☺kQ`♥", 10); // Cipher
 ```
 
 Types:
