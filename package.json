@@ -1,6 +1,6 @@
 {
   "name": "caesars-cipher",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A library that provides a simple interface to the ceasers cipher with a large range.",
   "types": "index.d.ts",
   "main": "index.js",
