@@ -1,6 +1,6 @@
 # caesars-cipher
 
-A library that provides a simple interface to the ceasers cipher with a large range.
+A library that provides a simple interface to the caesars cipher with a large range.
 
 Uses the legal range of UTF-8 instead of the regular alphabet: **0x80** _(128)_
 

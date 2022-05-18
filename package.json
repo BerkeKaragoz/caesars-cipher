@@ -1,7 +1,7 @@
 {
   "name": "caesars-cipher",
-  "version": "2.0.1",
-  "description": "A library that provides a simple interface to the ceasers cipher with a large range.",
+  "version": "2.0.2",
+  "description": "A library that provides a simple interface to the caesars cipher with a large range.",
   "types": "index.d.ts",
   "main": "index.js",
   "files": [
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BerkeKaragoz/ceasars-cipher.git"
+    "url": "git+https://github.com/BerkeKaragoz/caesars-cipher.git"
   },
   "keywords": [
     "caesars",
@@ -29,9 +29,9 @@
   "author": "E. Berke Karagöz <mail@berkekaragoz.com> (https://github.com/BerkeKaragoz)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BerkeKaragoz/ceasars-cipher/issues"
+    "url": "https://github.com/BerkeKaragoz/caesars-cipher/issues"
   },
-  "homepage": "https://github.com/BerkeKaragoz/ceasars-cipher#readme",
+  "homepage": "https://github.com/BerkeKaragoz/caesars-cipher#readme",
   "devDependencies": {
     "@types/node": "^17.0.34",
     "copyfiles": "^2.4.1",
