@@ -19,9 +19,9 @@ const fromCodeArray = (arr: Uint8Array): string => {
 export const _caesarsCipher = (
   text: string,
   shiftAmount: number = 1,
-  toBase64: (string: string) => string,
+  middleware: (string: string) => string,
 ): string => {
-  const codes = toCodeArray(toBase64(text));
+  const codes = toCodeArray(middleware(text));
   const ciphered = new Uint8Array(codes);
 
   ciphered.map((value: number, i: number) => {
@@ -34,7 +34,7 @@ export const _caesarsCipher = (
 export const _caesarsDecipher = (
   cipheredText: Parameters<CaesarsCipher>["0"],
   shiftAmount: Parameters<CaesarsCipher>["1"],
-  fromBase64: (string: string) => string,
+  middleware: (string: string) => string,
 ): string => {
   const cipheredCodes = toCodeArray(cipheredText);
   const decipheredCodes = new Uint8Array(cipheredCodes);
@@ -43,5 +43,5 @@ export const _caesarsDecipher = (
     return (decipheredCodes[i] = modulo(value - shiftAmount, MAX_LEGAL_VALUE));
   });
 
-  return fromBase64(fromCodeArray(decipheredCodes));
+  return middleware(fromCodeArray(decipheredCodes));
 };
