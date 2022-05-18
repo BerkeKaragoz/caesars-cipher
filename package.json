@@ -1,6 +1,6 @@
 {
   "name": "caesars-cipher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library that provides a simple interface to the ceasers cipher for browser and node.js.",
   "types": "index.d.ts",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "rimraf dist && tsc && pnpm run build:post",
-    "build:post": "copyfiles package.json dist",
+    "build:post": "copyfiles inFile package.json README.md outDirectory dist ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
