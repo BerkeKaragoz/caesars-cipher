@@ -2,13 +2,16 @@
   "name": "caesars-cipher",
   "version": "1.0.0",
   "description": "A library that provides a simple interface to the ceasers cipher.",
-  "types": "dist/types.d.ts",
+  "types": "index.d.ts",
+  "main": "index.js",
   "files": [
-    "dist/"
+    "*.js",
+    "*.d.ts"
   ],
   "scripts": {
     "start": "node ./dist/index.js",
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc && pnpm run build:post",
+    "build:post": "copyfiles package.json dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,8 +34,8 @@
   "homepage": "https://github.com/BerkeKaragoz/ceasars-cipher#readme",
   "devDependencies": {
     "@types/node": "^17.0.34",
+    "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2",
-    "semantic-release": "^19.0.2",
     "typescript": "^4.6.4"
   }
 }
