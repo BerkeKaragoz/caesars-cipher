@@ -35,3 +35,5 @@ Types:
 type CaesarsCipher = (text: string, shiftAmount: number) => string;
 type CaesarsDecipher = (cipheredText: string, shiftAmount: number) => string;
 ```
+
+![image](https://user-images.githubusercontent.com/34271483/169052415-a29a6c2b-6b78-47e8-a3f5-e975f7406904.png)
