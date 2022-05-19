@@ -16,8 +16,8 @@ You can try it out at the widget at [berkekaragoz.com](https://berkekaragoz.com)
 ```ts
 import { caesarsCipher, caesarsDecipher } from "caesars-cipher/uri-encoded";
 import {
-  base64caesarsCipher,
-  base64caesarsDecipher,
+  base64CaesarsCipher,
+  base64CaesarsDecipher,
 } from "caesars-cipher/base64";
 
 // uri-encoded
@@ -25,8 +25,8 @@ caesarsCipher("Cipher", 10); // Mszro|
 caesarsDecipher("Mszro|", 10); // Cipher
 
 // base64
-base64caesarsCipher("Cipher", 10); // [<v☺kQ`♥
-base64caesarsDecipher("[<v☺kQ`♥", 10); // Cipher
+base64CaesarsCipher("Cipher", 10); // [<v☺kQ`♥
+base64CaesarsDecipher("[<v☺kQ`♥", 10); // Cipher
 ```
 
 Types:
